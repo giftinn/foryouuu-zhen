@@ -30,7 +30,7 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
             textShadow: '0 4px 20px rgba(236, 72, 153, 0.3)'
           }}
         >
-          Hi my love
+          Hi Zhen
         </motion.h1>
         
         <motion.div
@@ -55,7 +55,7 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
           animate={{ opacity: [0.8, 1, 0.8] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          Play a little game to unlock your surprises
+          Play a little game to unlock my answe
         </motion.p>
 
         {/* Enhanced button with modern styling */}
@@ -115,3 +115,4 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
 };
 
 export default WelcomePage;
+
