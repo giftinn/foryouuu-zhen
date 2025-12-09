@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { soundEffects } from '../utils/soundEffects';
-import startMusic from '../assets/sounds/song.mp3';
 
 interface WelcomePageProps {
   onNext: () => void;
@@ -23,7 +22,7 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
             backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
           }}
           transition={{ 
-            duration: 5, 
+            duration: 5,
             repeat: Infinity,
             ease: 'linear'
           }}
@@ -60,33 +59,28 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
           Play a little game to unlock my answer
         </motion.p>
 
-        {/* Enhanced button with modern styling */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.2, type: 'spring', bounce: 0.5 }}
         >
           <motion.button
-            onClick={() => {
-              // ==============================
-              //    PLAY SOUND AUTOMATIS 🎵
-              // ==============================
-              if (soundEffects.start) {
-                soundEffects.start.currentTime = 0; 
-                soundEffects.start.play();
-              }
+  onClick={() => {
+    // ================================
+    //  PLAY MUSIC VIA URL (LOOPING)
+    // ================================
+    const bgMusic = new Audio("https://files.catbox.moe/abcd123.mp3"); 
+    bgMusic.loop = true;      // biar muter terus
+    bgMusic.volume = 1.0;     // volume bebas
+    bgMusic.play();
 
-              // lanjut next page
-              onNext();
-            }}
-            className="group relative px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-pink-500 via-rose-500 to-pink-500 text-white font-bold rounded-full shadow-2xl overflow-hidden text-base sm:text-lg md:text-xl"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            style={{
-              backgroundSize: '200% auto'
-            }}
-          >
-            {/* Shimmer effect */}
+    // halaman berikutnya
+    onNext();
+  }}
+  className="group relative px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-pink-500 via-rose-500 to-pink-500 text-white font-bold rounded-full shadow-2xl overflow-hidden text-base sm:text-lg md:text-xl"
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+>
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
               animate={{
@@ -99,8 +93,7 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
                 ease: 'linear'
               }}
             />
-            
-            {/* Button text */}
+
             <span className="relative z-10 flex items-center justify-center gap-2">
               Start Game
               <motion.span
@@ -111,7 +104,6 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
               </motion.span>
             </span>
 
-            {/* Glow effect on hover */}
             <motion.div
               className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               style={{
@@ -126,6 +118,3 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
 };
 
 export default WelcomePage;
-
-
-
