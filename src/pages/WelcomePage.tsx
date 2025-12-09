@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { soundEffects } from '../utils/soundEffects';
+import startMusic from '../assets/sounds/song.mp3';
 
 interface WelcomePageProps {
   onNext: () => void;
@@ -125,3 +126,4 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
 };
 
 export default WelcomePage;
+
