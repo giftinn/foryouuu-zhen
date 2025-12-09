@@ -10,7 +10,7 @@ const PasswordPage: React.FC<PasswordPageProps> = ({ onNext }) => {
   const [password, setPassword] = useState('');
   const [showError, setShowError] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
-  const correctPassword = 'kakav';
+  const correctPassword = '00.00';
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,8 +42,7 @@ const PasswordPage: React.FC<PasswordPageProps> = ({ onNext }) => {
   return (
     <div className="text-center space-y-6 sm:space-y-8 px-4">
       <div className="space-y-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold gradient-text leading-relaxed">Do u still remember the way u call me?</h2>
-        <p className="text-base sm:text-lg md:text-xl text-pink-600 font-medium">Enter it here ya, be carefull</p>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold gradient-text leading-relaxed">Enter the time when i sent this to you!</h2>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -157,4 +156,5 @@ const PasswordPage: React.FC<PasswordPageProps> = ({ onNext }) => {
 
 
 export default PasswordPage;
+
 
