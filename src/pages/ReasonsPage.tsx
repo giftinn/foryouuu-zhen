@@ -30,7 +30,7 @@ const ReasonsPage: React.FC<ReasonsPageProps> = ({ onNext }) => {
     {
       id: 3,
       title: 'Yourself',
-      text: 'I love u because it's u zee',
+      text: 'I love u because it is u zee',
       isRevealed: false
     },
     {
@@ -200,3 +200,4 @@ const ReasonsPage: React.FC<ReasonsPageProps> = ({ onNext }) => {
 
 
 export default ReasonsPage;
+
