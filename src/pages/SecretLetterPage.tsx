@@ -10,15 +10,15 @@ const SecretLetterPage: React.FC<SecretLetterPageProps> = ({ onBackToStart }) =>
   const [displayedText, setDisplayedText] = useState('');
   const [showFinalMessage, setShowFinalMessage] = useState(false);
 
-  const fullText = `Happy birthday to the person who owns my heart, even from miles apart.
-I know you've been really busy lately with your studies, and maybe a bit tired or overwhelmed, but I just want you to know how proud I am of you.
-You've been giving your best, even when things get tough, and that's one of the many reasons I love you so much.
-On your special day, I hope you take a little break and remember that you're so loved not just by the people around you, but especially by me.
-I wish I could be there to hug you, to celebrate with you, and to see your smile and hear your voice.
-Even though distance keeps us apart, my heart never left your side.
-You're my peace, my favorite person, and the one I always root for.
-I hope this message makes you feel how much I love and miss you.
-Happy birthday, my love`;
+  const fullText = `hai ze, baca pelan-pelan ya wkwk.
+gatau mau sedih apa seneng sama yang kamu bilang, tapi yang pasti aku seneng karna ternyata kamu masi inget aku and miss me sometimes (?) 
+
+i'm glad that you're now happy dan bisa berinteraksi sama orang lain lagi. good job zee, kamu gapernah gagal bikin aku bangga sama kamu. jujur kaget banget pas cek id ternyata kamu balik rp lagi dan yeah, u have new (life) there maybe. 
+
+zee, after all happens to us, trust me itu ga mengurangi rasa sayang aku ke kamu, how naif i am. i don't know why but i just wanna loving u and caring u it's enough for me. i can't fall in love with others atau punya ketertarikan sedikit pun for looking someone after u. 
+
+kamu pasti bingung ya, sorry bikin kamu ngerasain itu, i'm here for u, whenever u need me, whenever u want to comeback to me, i'll stay for u and giving the comfort place as i can zee. so don't worry yaa... and i wanna ask u something, if u don't mind can us being us again? ga harus sekarang, i'll wait sampai kamu siap dan ga ragu, just take the time and the moment zee.
+`;
 
   useEffect(() => {
     let currentIndex = 0;
@@ -124,5 +124,6 @@ Happy birthday, my love`;
     </div>
   );
 };
+
 
 export default SecretLetterPage;
