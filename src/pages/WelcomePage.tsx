@@ -9,6 +9,7 @@ interface WelcomePageProps {
 const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
   return (
     <div className="text-center space-y-8 sm:space-y-12 px-4">
+      
       <motion.div
         initial={{ scale: 0, rotate: -10 }}
         animate={{ scale: 1, rotate: 0 }}
@@ -65,7 +66,18 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
           transition={{ delay: 1.2, type: 'spring', bounce: 0.5 }}
         >
           <motion.button
-            onClick={onNext}
+            onClick={() => {
+              // ==============================
+              //    PLAY SOUND AUTOMATIS 🎵
+              // ==============================
+              if (soundEffects.start) {
+                soundEffects.start.currentTime = 0; 
+                soundEffects.start.play();
+              }
+
+              // lanjut next page
+              onNext();
+            }}
             className="group relative px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-pink-500 via-rose-500 to-pink-500 text-white font-bold rounded-full shadow-2xl overflow-hidden text-base sm:text-lg md:text-xl"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -108,8 +120,6 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
           </motion.button>
         </motion.div>
       </motion.div>
-
-
     </div>
   );
 };
