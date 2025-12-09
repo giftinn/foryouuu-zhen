@@ -17,8 +17,8 @@ const ReasonsPage: React.FC<ReasonsPageProps> = ({ onNext }) => {
   const [reasons, setReasons] = useState<Reason[]>([
     {
       id: 1,
-      title: 'Your Dedication',
-      text: 'You never give up, even when things get hard.',
+      title: 'Your Presence',
+      text: 'I feel enough when i am with u',
       isRevealed: false
     },
     {
@@ -29,8 +29,8 @@ const ReasonsPage: React.FC<ReasonsPageProps> = ({ onNext }) => {
     },
     {
       id: 3,
-      title: 'Your Humor',
-      text: 'You always make me laugh.',
+      title: 'Yourself',
+      text: 'I love u because it's u zee',
       isRevealed: false
     },
     {
@@ -197,5 +197,6 @@ const ReasonsPage: React.FC<ReasonsPageProps> = ({ onNext }) => {
     </div>
   );
 };
+
 
 export default ReasonsPage;
