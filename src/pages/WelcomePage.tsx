@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { soundEffects } from '../utils/soundEffects';
 
 interface WelcomePageProps {
   onNext: () => void;
@@ -130,3 +129,4 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
 };
 
 export default WelcomePage;
+
