@@ -42,8 +42,8 @@ const PasswordPage: React.FC<PasswordPageProps> = ({ onNext }) => {
   return (
     <div className="text-center space-y-6 sm:space-y-8 px-4">
       <div className="space-y-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold gradient-text leading-relaxed">Do you still remember our special date?</h2>
-        <p className="text-base sm:text-lg md:text-xl text-pink-600 font-medium">Enter the date when our love story began</p>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold gradient-text leading-relaxed">Do u still remember the way u call me?</h2>
+        <p className="text-base sm:text-lg md:text-xl text-pink-600 font-medium">Enter it here ya, be carefull</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -55,7 +55,7 @@ const PasswordPage: React.FC<PasswordPageProps> = ({ onNext }) => {
             type="text"
             value={password}
             onChange={handleInputChange}
-            placeholder="DDMMYYYY"
+            placeholder="lowercase, tanpa spasi"
             maxLength={8}
             className="w-full px-4 sm:px-6 py-3 sm:py-4 text-center text-lg sm:text-xl font-semibold border-2 border-pink-300 rounded-xl sm:rounded-2xl focus:outline-none focus:border-pink-500 focus:ring-4 focus:ring-pink-200 transition-all duration-300 bg-white/90 backdrop-blur-sm shadow-lg hover:shadow-xl"
             style={{ fontFamily: 'monospace', letterSpacing: '0.15em' }}
@@ -154,5 +154,6 @@ const PasswordPage: React.FC<PasswordPageProps> = ({ onNext }) => {
     </div>
   );
 };
+
 
 export default PasswordPage;
