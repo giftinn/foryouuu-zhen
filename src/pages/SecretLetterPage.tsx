@@ -92,7 +92,7 @@ kamu pasti bingung ya, sorry bikin kamu ngerasain itu, i'm here for u, whenever 
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
               className="text-xl sm:text-2xl font-bold text-pink-800 px-4"
-            >I love you forever, my baby 💞</motion.div>
+            ></motion.div>
 
             {/* Final decorative hearts */}
             <motion.div
@@ -127,3 +127,4 @@ kamu pasti bingung ya, sorry bikin kamu ngerasain itu, i'm here for u, whenever 
 
 
 export default SecretLetterPage;
+
