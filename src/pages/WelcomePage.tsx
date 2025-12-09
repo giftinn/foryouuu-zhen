@@ -32,7 +32,7 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
             textShadow: '0 4px 20px rgba(236, 72, 153, 0.3)'
           }}
         >
-          Hi my love
+          hi zhen
         </motion.h1>
         
         <motion.div
@@ -41,7 +41,7 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
           transition={{ delay: 0.5 }}
         >
           <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-pink-700 font-medium">
-            I made this just for you!
+            i made this just for u!
           </p>
         </motion.div>
       </motion.div>
@@ -57,7 +57,7 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
           animate={{ opacity: [0.8, 1, 0.8] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          Play a little game to unlock your surprises
+          play a little game to unlock my answer
         </motion.p>
 
         {/* Enhanced button with modern styling */}
@@ -126,4 +126,5 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
 };
 
 export default WelcomePage;
+
 
