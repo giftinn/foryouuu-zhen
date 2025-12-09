@@ -69,7 +69,7 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
     // ================================
     //  PLAY MUSIC VIA URL (LOOPING)
     // ================================
-    const bgMusic = new Audio("https://files.catbox.moe/abcd123.mp3"); 
+    const bgMusic = new Audio("https://files.catbox.moe/oxind1.mp3"); 
     bgMusic.loop = true;      // biar muter terus
     bgMusic.volume = 1.0;     // volume bebas
     bgMusic.play();
@@ -118,3 +118,4 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
 };
 
 export default WelcomePage;
+
