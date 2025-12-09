@@ -55,7 +55,7 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
           animate={{ opacity: [0.8, 1, 0.8] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          Play a little game to unlock my answe
+          Play a little game to unlock my answer
         </motion.p>
 
         {/* Enhanced button with modern styling */}
@@ -115,4 +115,5 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
 };
 
 export default WelcomePage;
+
 
