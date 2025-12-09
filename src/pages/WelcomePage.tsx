@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { soundEffects } from '../utils/soundEffects';
 
@@ -7,6 +7,26 @@ interface WelcomePageProps {
 }
 
 const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
+
+  // ============================================
+  //     SAFE AUDIO REF (ANTI ERROR VERCEL)
+  // ============================================
+  const bgMusicRef = useRef<HTMLAudioElement | null>(null);
+
+  const playMusic = () => {
+    if (typeof window !== "undefined") {
+      if (!bgMusicRef.current) {
+        bgMusicRef.current = new Audio("https://files.catbox.moe/oxind1.mp3"); // ← LINK KAMU
+        bgMusicRef.current.loop = true;
+        bgMusicRef.current.volume = 1.0;
+      }
+
+      bgMusicRef.current.play().catch(err => {
+        console.error("Audio autoplay blocked:", err);
+      });
+    }
+  };
+
   return (
     <div className="text-center space-y-8 sm:space-y-12 px-4">
       
@@ -18,10 +38,10 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
       >
         <motion.h1 
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-rose-500 to-pink-600 leading-tight"
-          animate={{ 
+          animate={{
             backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
           }}
-          transition={{ 
+          transition={{
             duration: 5,
             repeat: Infinity,
             ease: 'linear'
@@ -65,22 +85,14 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
           transition={{ delay: 1.2, type: 'spring', bounce: 0.5 }}
         >
           <motion.button
-  onClick={() => {
-    // ================================
-    //  PLAY MUSIC VIA URL (LOOPING)
-    // ================================
-    const bgMusic = new Audio("https://files.catbox.moe/oxind1.mp3"); 
-    bgMusic.loop = true;      // biar muter terus
-    bgMusic.volume = 1.0;     // volume bebas
-    bgMusic.play();
-
-    // halaman berikutnya
-    onNext();
-  }}
-  className="group relative px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-pink-500 via-rose-500 to-pink-500 text-white font-bold rounded-full shadow-2xl overflow-hidden text-base sm:text-lg md:text-xl"
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.95 }}
->
+            onClick={() => {
+              playMusic();  // 🔥 pakai function aman
+              onNext();
+            }}
+            className="group relative px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-pink-500 via-rose-500 to-pink-500 text-white font-bold rounded-full shadow-2xl overflow-hidden text-base sm:text-lg md:text-xl"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
               animate={{
@@ -118,4 +130,3 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
 };
 
 export default WelcomePage;
-
